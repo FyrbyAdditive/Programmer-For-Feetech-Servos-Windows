@@ -135,7 +135,7 @@
                             Command="{Binding RefreshPortsCommand}"
                             IsEnabled="{Binding ServoManager.IsScanning, Converter={StaticResource InverseBoolConverter}}"
                             Padding="8" Margin="0,0,16,0" ToolTip="Refresh Ports">
-                        <TextBlock Text="??" FontSize="14"/>
+                        <TextBlock Text="🔄" FontSize="14"/>
                     </Button>
 
                     <!-- Connection Status -->
@@ -256,7 +256,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Column="0" Text="??" FontSize="24" 
+                                    <TextBlock Grid.Column="0" Text="⚙️" FontSize="24" 
                                                Margin="0,0,12,0" VerticalAlignment="Center"
                                                Foreground="{StaticResource SuccessBrush}"/>
 
@@ -277,7 +277,7 @@
                     <!-- Empty State -->
                     <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
                                 Visibility="{Binding Servos.Count, Converter={StaticResource ZeroToVisibilityConverter}}">
-                        <TextBlock Text="??" FontSize="48" HorizontalAlignment="Center" 
+                        <TextBlock Text="🔍" FontSize="48" HorizontalAlignment="Center" 
                                    Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,16"/>
                         <TextBlock Text="No servos found" FontSize="16" FontWeight="SemiBold"
                                    HorizontalAlignment="Center" Foreground="{StaticResource TextPrimaryBrush}"/>
@@ -291,7 +291,7 @@
                             Padding="12" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
                         <Button Style="{StaticResource ModernButton}" 
                                 Command="{Binding ScanServosCommand}"
-                                Content="??  Refresh Scan" 
+                                Content="🔄  Refresh Scan" 
                                 HorizontalAlignment="Stretch"/>
                     </Border>
                 </Grid>
@@ -306,7 +306,7 @@
                 <!-- Servo Detail View -->
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
                             Visibility="{Binding SelectedServo, Converter={StaticResource NullToVisibilityConverter}}">
-                    <TextBlock Text="??" FontSize="80" HorizontalAlignment="Center" 
+                    <TextBlock Text="⚙️" FontSize="80" HorizontalAlignment="Center" 
                                Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,24"/>
 
                     <StackPanel DataContext="{Binding SelectedServo}">
@@ -323,7 +323,7 @@
                         <Button Style="{StaticResource ModernButton}" 
                                 Command="{Binding DataContext.ChangeServoIdCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                                 IsEnabled="{Binding DataContext.ServoManager.IsScanning, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource InverseBoolConverter}}"
-                                Content="?  Change Servo ID" 
+                                Content="✏️  Change Servo ID" 
                                 Padding="20,12" FontSize="15" FontWeight="SemiBold"
                                 HorizontalAlignment="Center" MinWidth="220"/>
                     </StackPanel>
@@ -332,7 +332,7 @@
                 <!-- No Selection View -->
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
                             Visibility="{Binding SelectedServo, Converter={StaticResource NullToVisibilityConverterInverse}}">
-                    <TextBlock Text="??" FontSize="64" HorizontalAlignment="Center" 
+                    <TextBlock Text="👈" FontSize="64" HorizontalAlignment="Center" 
                                Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,16"/>
                     <TextBlock Text="Select a servo" FontSize="20" 
                                Foreground="{StaticResource TextSecondaryBrush}"
