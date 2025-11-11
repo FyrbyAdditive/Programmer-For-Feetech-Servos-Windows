@@ -48,7 +48,8 @@ public class ServoManager : INotifyPropertyChanged
     }
 
     public bool IsConnected => ConnectionState.State == Models.ConnectionState.Connected;
-    public bool IsDisconnected => ConnectionState.State == Models.ConnectionState.Disconnected;
+    public bool IsDisconnected => ConnectionState.State == Models.ConnectionState.Disconnected || 
+                                   ConnectionState.State == Models.ConnectionState.Error;
 
     public bool IsScanning
     {
