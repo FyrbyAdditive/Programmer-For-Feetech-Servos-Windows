@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Images\AppIcon.ico</ApplicationIcon>
+    <AssemblyName>ProgrammerForFeetechServos</AssemblyName>
+    <AssemblyTitle>Programmer For Feetech Servos</AssemblyTitle>
+    <Product>Programmer For Feetech Servos</Product>
+    <Company>Fyrby Additive Manufacturing &amp; Engineering</Company>
+    <Copyright>Copyright © 2025 Fyrby Additive Manufacturing &amp; Engineering</Copyright>
+    <Version>1.0.0</Version>
+    
+    <!-- MSBuild properties for installer -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>ProgrammerForFeetechServos</PackageId>
+    <Authors>Fyrby Additive Manufacturing &amp; Engineering</Authors>
+    <Description>Professional servo ID programming tool for Feetech STS and SCS series servos</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\feetech-servo-sdk-csharp\FeetechServoSDK\FeetechServoSDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\**\*" />
+  </ItemGroup>
+
+</Project>

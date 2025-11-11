@@ -1,0 +1,47 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="Programmer For Feetech Servos" 
+           Version="1.0.0" 
+           Manufacturer="Fyrby Additive Manufacturing &amp; Engineering"
+           UpgradeCode="8B3E4F2A-9D7C-4E1B-A5F3-2C8D9E6F1A4B">
+    
+    <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="MainApplication" Title="Programmer For Feetech Servos" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <Icon Id="AppIcon.ico" SourceFile="Resources\Images\AppIcon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
+  </Package>
+
+  <Fragment>
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="Programmer For Feetech Servos" />
+    </StandardDirectory>
+    
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Programmer For Feetech Servos"/>
+    </StandardDirectory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component>
+        <File Source="bin\publish\win-x64-single\ProgrammerForFeetechServos.exe" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <Component Id="ApplicationShortcut" Directory="ApplicationProgramsFolder">
+      <Shortcut Id="ApplicationStartMenuShortcut"
+                Name="Programmer For Feetech Servos"
+                Target="[INSTALLFOLDER]ProgrammerForFeetechServos.exe"
+                WorkingDirectory="INSTALLFOLDER"
+                Icon="AppIcon.ico" />
+      <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+      <RegistryValue Root="HKCU" Key="Software\FyrbyAdditive\ProgrammerForFeetechServos" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+</Wix>
