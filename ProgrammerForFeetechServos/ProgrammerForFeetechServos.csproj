@@ -12,7 +12,9 @@
     <Product>Programmer For Feetech Servos</Product>
     <Company>Fyrby Additive Manufacturing &amp; Engineering</Company>
     <Copyright>Copyright © 2025 Fyrby Additive Manufacturing &amp; Engineering</Copyright>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
+    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
     
     <!-- MSBuild properties for installer -->
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
